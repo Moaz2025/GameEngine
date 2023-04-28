@@ -1,17 +1,33 @@
-const prompt = require ("prompt-sync")({sigint: true})
 class Home{
-    games = ['chess', 'tic-tac-toe', 'checkers', 'sudoku', 'connect-4', '8-queens'];
-    constructor(){
-        console.log(`Choose from the following games (ex: input "1" for ${this.games[0]})`);
-        console.log(this.games);
-        let gameIndex = prompt('');
-        while(gameIndex<1 || gameIndex>this.games.length){
-            gameIndex = prompt('Wrong Input! try again: ');
-        }
-        this.game = this.games[gameIndex-1];
+    constructor(games){
+        console.log(games)
+        this.games = games;
+        this.chosenGame = null;
+        this.homeView = document.getElementById("home");
+        this.gameSelection = document.getElementById("games");
     }
-    getGame(){
-        return this.game;
+    drawHome(){
+        for (let index = 0; index < games.length; index++) {
+            const button = document.createElement("button");
+            const inputValue = games[index];
+            const t = document.createTextNode(inputValue);
+            button.appendChild(t);
+            this.gameSelection.appendChild(button);
+            // const li = document.createElement("li");
+            // const inputValue = games[index];
+            // const t = document.createTextNode(inputValue);
+            // const link = document.createElement("a");
+            // link.appendChild(t);
+            // link.setAttribute("href", "dddd.html")
+            // li.appendChild(link);
+            // // button.addEventListener("click", ()=>{
+            // //     console.log(button.textContent);
+            // //     this.chosenGame = button.textContent;
+            // // });
+            // document.getElementById("games").appendChild(li);
+        }
+    }
+    removeHome(){
+        this.homeView.style.display = "none";
     }
 }
-module.exports = {Home};
