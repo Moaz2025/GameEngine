@@ -8,12 +8,17 @@ h1{
 h2{
     margin: 0;
 }
+footer{
+    height: 50px;
+}
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    background-color: white;
+    padding: 135px 0 10 0;
+    margin: 0;
 }
 #home{
     width: 100%;
@@ -37,25 +42,25 @@ body{
 #home ul button {
     cursor: pointer;
     position: relative;
-    padding: 12px 8px 12px 8px;
+    padding: 0;
     background: #eee;
     font-size: 180%;
     transition: 0.2s;
     border-radius: 10px;
-    margin: 3%;
+    margin: 1%;
     text-align:center;
+    width: 100%;
 }  
 /* Darker background-color on hover */
-#home ul button:hover {
+button:hover {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    transition-duration: 500ms;
+}
+/* #game ul button:hover {
     background-color: #f44336;
     color: white;
     transition-duration: 1500ms;
-}
-#game ul button:hover {
-    background-color: #f44336;
-    color: white;
-    transition-duration: 1500ms;
-}
+} */
 #home a{
     color: black;
     text-decoration: none;
@@ -79,24 +84,46 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    border: 0.5px solid black;
-    border-radius: 2px;
-    width: 50px;
-    height: 50px;
-    margin:1px; 
+    background-color: rgb(148, 255, 201);
+    border: 0.2px solid black;
+    border-radius: 1px;
+    width: 40px;
+    height: 40px;
+    margin:0.1px; 
+}
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(33, 48, 252);
+    color: white;
+    border: 0.2px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin:3px 3px 3px 3px; 
+}
+.alternativeCell{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(248, 255, 193);
+    border: 0.2px solid black;
+    border-radius: 1px;
+    width: 40px;
+    height: 40px;
+    margin:0.1px; 
 }
 #game button{
     cursor: pointer;
     position: relative;
-    background: #eee;
+    /* background: #eee; */
     font-size: 180%;
     transition: 0.2s;
     text-align:center;
 }
 #game button:hover {
-    background-color: #f44336;
-    color: white;
+    background-color: #eee;
     transition-duration: 1500ms;
 }
 .gameOptions{
