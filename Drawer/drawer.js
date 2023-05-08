@@ -144,6 +144,12 @@ function selectGame(gameChosen){
 }
 function submitInput(userInput){
     console.log(userInput);
+    if(!userInput){
+        alert("Wrong input, try again");
+        console.log("Wrong input"); 
+        setTimeout(gameLoop,500);
+        return;
+    }
     if(game.isGameFinished()){
         window.alert("Game has finished");
         return;
