@@ -16,11 +16,6 @@ class Home{
             const inputValue = games[index];
             const t = document.createTextNode(inputValue);
             button.appendChild(t);
-            // button.addEventListener("click", ()=>{
-            //     console.log("click: " + button.textContent);
-            //     chosenGame = button.textContent;
-            //     selectGame(chosenGame);
-            // });
             li.appendChild(button);
             gameSelection.appendChild(li);
         }
@@ -135,13 +130,6 @@ class TwoColorsDrawer extends Drawer{
         }
     }
 }
-let drawer = new Drawer();
-function selectGame(gameChosen){
-    game = new GameFactory(gameChosen);
-    drawer = new DrawerFactory(gameChosen);
-    drawer.drawGame(game);
-    home.removeHome();
-}
 function submitInput(userInput){
     console.log(userInput);
     if(!userInput){
@@ -164,6 +152,7 @@ function submitInput(userInput){
     }
     setTimeout(gameLoop,500);
 }
+
 let home = new Home(games);
 home.drawHome();
 removeGame();
