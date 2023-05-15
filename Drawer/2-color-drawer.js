@@ -1,9 +1,11 @@
-class Drawer{
+class TwoColorsDrawer extends Drawer{
     drawGame(game, gameView){
         // let gameView = document.getElementById("game");
         while (gameView.hasChildNodes()) {
             gameView.removeChild(gameView.firstChild);
         }
+        // let options = document.getElementById("gameOptions");
+        // options.style.display = "initial";
         gameView.style.display = "initial";
         var charIndex = 97;
         for (let i = 0; i < game.rows; i++) {
@@ -21,7 +23,12 @@ class Drawer{
                 const inputValue = game.board[i][j];
                 const t = document.createTextNode(inputValue);
                 button.appendChild(t);
-                button.className = "cell";
+                // button.style.background = game.board[i][j].color;
+                if ((i + j) % 2 === 1) {
+                    button.className = "cell"
+                }else {
+                    button.className = "alternativeCell"
+                }
                 row.appendChild(button);
             }
             gameView.appendChild(row);
